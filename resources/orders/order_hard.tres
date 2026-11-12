@@ -1,0 +1,13 @@
+[gd_resource type="Resource" script_class="Order" format=3 uid="uid://cyaa2y7h5wgh7"]
+
+[ext_resource type="Script" uid="uid://da6eyi00ur684" path="res://scripts/Ingredient.gd" id="1_si40y"]
+[ext_resource type="Script" uid="uid://865ejc3c3tfw" path="res://scripts/order.gd" id="2_mjixe"]
+[ext_resource type="Resource" uid="uid://b04m0tpftjdjv" path="res://resources/ingredients/gulaman.tres" id="2_xjff7"]
+[ext_resource type="Resource" uid="uid://dic5h3asf7vil" path="res://resources/ingredients/leche_flan.tres" id="3_uj727"]
+[ext_resource type="Resource" uid="uid://c7obowx2ilg43" path="res://resources/ingredients/ube.tres" id="4_i6mcr"]
+
+[resource]
+script = ExtResource("2_mjixe")
+required = Array[ExtResource("1_si40y")]([ExtResource("2_xjff7"), ExtResource("3_uj727"), ExtResource("4_i6mcr")])
+payment = 45
+metadata/_custom_type_script = "uid://865ejc3c3tfw"

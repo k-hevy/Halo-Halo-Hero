@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://c275y0hqgkqsw"]
+
+[ext_resource type="Script" uid="uid://0jtthjcfdpar" path="res://scripts/customer.gd" id="1_ktfjk"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(40, 40)
+
+[node name="Customer" type="Area2D" unique_id=1902535501]
+script = ExtResource("1_ktfjk")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1865181110]
+offset_right = 40.0
+offset_bottom = 40.0
+
+[node name="Label" type="Label" parent="." unique_id=433384823]
+offset_top = -26.0
+offset_right = 40.0
+offset_bottom = -3.0
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1388447871]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_g4v7s")

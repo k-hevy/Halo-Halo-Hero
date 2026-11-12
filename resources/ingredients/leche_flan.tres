@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://dic5h3asf7vil"]
+
+[ext_resource type="Script" uid="uid://da6eyi00ur684" path="res://scripts/Ingredient.gd" id="1_a76h7"]
+
+[resource]
+script = ExtResource("1_a76h7")
+id = &"leche_flan"
+display_name = "leche_flan"
+layer = 1
+color = Color(0.86137897, 0.5602579, 0.2686338, 1)
+price = 20.0
+metadata/_custom_type_script = "uid://da6eyi00ur684"

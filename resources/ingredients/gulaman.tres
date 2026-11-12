@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://b04m0tpftjdjv"]
+
+[ext_resource type="Script" uid="uid://da6eyi00ur684" path="res://scripts/Ingredient.gd" id="1_g1fxt"]
+
+[resource]
+script = ExtResource("1_g1fxt")
+id = &"gulaman"
+display_name = "gulaman"
+color = Color(1.2995303e-06, 0.6770673, 0.4124107, 1)
+price = 5.0
+metadata/_custom_type_script = "uid://da6eyi00ur684"

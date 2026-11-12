@@ -1,0 +1,10 @@
+[gd_resource type="Resource" script_class="Order" format=3 uid="uid://d1nut2rllhv1v"]
+
+[ext_resource type="Script" uid="uid://da6eyi00ur684" path="res://scripts/Ingredient.gd" id="1_rdhqa"]
+[ext_resource type="Resource" uid="uid://b04m0tpftjdjv" path="res://resources/ingredients/gulaman.tres" id="2_844en"]
+[ext_resource type="Script" uid="uid://865ejc3c3tfw" path="res://scripts/order.gd" id="3_kt2ad"]
+
+[resource]
+script = ExtResource("3_kt2ad")
+required = Array[ExtResource("1_rdhqa")]([ExtResource("2_844en")])
+metadata/_custom_type_script = "uid://865ejc3c3tfw"

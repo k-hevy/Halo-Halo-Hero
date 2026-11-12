@@ -1,0 +1,57 @@
+[gd_scene format=3 uid="uid://bg27uuqglyith"]
+
+[ext_resource type="PackedScene" uid="uid://cx2fjyvxx8p3b" path="res://scenes/bowl.tscn" id="1_3q41x"]
+[ext_resource type="Script" uid="uid://dowgc21bvseou" path="res://scripts/counter.gd" id="1_me8a0"]
+[ext_resource type="PackedScene" uid="uid://kiek8kls28gy" path="res://scenes/ingredient_station.tscn" id="2_me8a0"]
+[ext_resource type="Resource" uid="uid://b04m0tpftjdjv" path="res://resources/ingredients/gulaman.tres" id="3_vv7id"]
+[ext_resource type="PackedScene" uid="uid://duqrh8ffxbri3" path="res://scenes/ingredient_item.tscn" id="4_u6cvs"]
+[ext_resource type="Resource" uid="uid://dic5h3asf7vil" path="res://resources/ingredients/leche_flan.tres" id="5_uk4ww"]
+[ext_resource type="Resource" uid="uid://c7obowx2ilg43" path="res://resources/ingredients/ube.tres" id="6_sae31"]
+
+[node name="Counter" type="Node2D" unique_id=1491791934]
+script = ExtResource("1_me8a0")
+
+[node name="Background" type="ColorRect" parent="." unique_id=1725896855]
+offset_top = 202.0
+offset_right = 641.0
+offset_bottom = 362.0
+mouse_filter = 2
+color = Color(0.8204723, 0.56650007, 0.6881041, 1)
+
+[node name="ServeButton" type="Button" parent="." unique_id=348762897]
+offset_left = 23.0
+offset_top = 117.0
+offset_right = 55.0
+offset_bottom = 141.0
+
+[node name="MoneyLabel" type="Label" parent="." unique_id=1917379193]
+offset_left = 1.0
+offset_top = 1.0
+offset_right = 41.0
+offset_bottom = 24.0
+
+[node name="CustomerSpot" type="Marker2D" parent="." unique_id=149410791]
+position = Vector2(146, 154)
+
+[node name="NextCustomerTimer" type="Timer" parent="." unique_id=394552823]
+one_shot = true
+
+[node name="Bowl" parent="." unique_id=868326820 instance=ExtResource("1_3q41x")]
+position = Vector2(362, 261)
+
+[node name="StationGulaman" parent="." unique_id=584477767 instance=ExtResource("2_me8a0")]
+position = Vector2(167, 222)
+data = ExtResource("3_vv7id")
+item_scene = ExtResource("4_u6cvs")
+
+[node name="StationLeche" parent="." unique_id=13605368 instance=ExtResource("2_me8a0")]
+position = Vector2(45, 225)
+data = ExtResource("5_uk4ww")
+item_scene = ExtResource("4_u6cvs")
+
+[node name="StationUbe" parent="." unique_id=1137135869 instance=ExtResource("2_me8a0")]
+position = Vector2(104, 223)
+data = ExtResource("6_sae31")
+item_scene = ExtResource("4_u6cvs")
+
+[connection signal="pressed" from="ServeButton" to="." method="_on_serve_button_pressed"]

@@ -1,0 +1,22 @@
+[gd_scene format=3 uid="uid://cx2fjyvxx8p3b"]
+
+[ext_resource type="Script" uid="uid://bfnyr5b3mfaxq" path="res://scripts/bowl.gd" id="1_5w6ed"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(40, 40)
+
+[node name="Bowl" type="Area2D" unique_id=868326820]
+script = ExtResource("1_5w6ed")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=2550704]
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=1505177700]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="Layers" type="Node2D" parent="." unique_id=45982215]
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]

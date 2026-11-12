@@ -1,0 +1,18 @@
+[gd_scene format=3 uid="uid://duqrh8ffxbri3"]
+
+[ext_resource type="Script" uid="uid://4x6q8tvl36a4" path="res://scripts/ingredient_item.gd" id="1_xrvfr"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(40, 40)
+
+[node name="IngredientItem" type="Area2D" unique_id=1909651553]
+script = ExtResource("1_xrvfr")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=739116732]
+position = Vector2(20, 20)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=1890973296]
+offset_right = 40.0
+offset_bottom = 40.0
+mouse_filter = 2
