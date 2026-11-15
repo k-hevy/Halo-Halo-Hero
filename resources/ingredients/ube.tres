@@ -6,7 +6,6 @@
 script = ExtResource("1_hrrri")
 id = &"ube"
 display_name = "ube"
-layer = 1
 color = Color(0.6144263, 0.27424315, 0.83344096, 1)
 price = 15.0
 metadata/_custom_type_script = "uid://da6eyi00ur684"

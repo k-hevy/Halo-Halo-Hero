@@ -6,7 +6,7 @@
 script = ExtResource("1_a76h7")
 id = &"leche_flan"
 display_name = "leche_flan"
-layer = 1
+layer = 2
 color = Color(0.86137897, 0.5602579, 0.2686338, 1)
 price = 20.0
 metadata/_custom_type_script = "uid://da6eyi00ur684"

@@ -46,15 +46,25 @@ func _drop() -> void:
 	global_position = home
 
 
-func add_ingredient(ingredient: Ingredient) -> void:
+func add_ingredient(ingredient: Ingredient) -> bool:
+	if ingredient.layer == Ingredient.Layer.RAW:
+		return false
 	contents.append(ingredient)
 	var r:= ColorRect.new()
 	r.color = ingredient.color
 	r.size = Vector2(LAYER_WIDTH, LAYER_HEIGHT)
 	r.position = Vector2(-LAYER_WIDTH, -LAYER_HEIGHT * contents.size()) 
 	$Layers.add_child(r)
-	
-	
+	return true
+
+
+func has_base() -> bool:
+	for ingredient in contents:
+		if ingredient.layer == Ingredient.Layer.BASE:
+			return true;
+	return false;
+
+
 func clear() -> void:
 	contents.clear()
 	for content in $Layers.get_children():

@@ -1,0 +1,28 @@
+[gd_scene format=3 uid="uid://ckyllys331b7s"]
+
+[ext_resource type="Script" uid="uid://cv3lmr6vghbmp" path="res://scripts/blender.gd" id="1_j4bi3"]
+
+[sub_resource type="RectangleShape2D" id="RectangleShape2D_g4v7s"]
+size = Vector2(41, 55)
+
+[node name="Blender" type="Area2D" unique_id=1358506422]
+script = ExtResource("1_j4bi3")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="." unique_id=777085463]
+position = Vector2(0, -5)
+shape = SubResource("RectangleShape2D_g4v7s")
+
+[node name="ColorRect" type="ColorRect" parent="." unique_id=650411342]
+offset_left = -20.0
+offset_top = -32.0
+offset_right = 21.0
+offset_bottom = 22.0
+mouse_filter = 2
+color = Color(0.84447217, 0.5421558, 0.95615214, 1)
+
+[node name="BlendTimer" type="Timer" parent="." unique_id=632511714]
+wait_time = 3.0
+one_shot = true
+
+[connection signal="input_event" from="." to="." method="_on_input_event"]
+[connection signal="timeout" from="BlendTimer" to="." method="_on_blend_timer_timeout"]

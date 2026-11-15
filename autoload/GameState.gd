@@ -9,6 +9,7 @@ func _ready() -> void:
 	EventBus.order_paid.connect(add_money)
 
 
+
 func add_money(amount: float) -> void:
 	money += amount
 	EventBus.money_changed.emit(money)
