@@ -3,7 +3,7 @@ extends Area2D
 
 signal dropped_on_customer(customer: Customer)
 
-const LAYER_HEIGHT := 8.0
+const LAYER_HEIGHT := 4.0
 const LAYER_WIDTH := 40.0  
 var dragging := false
 var grab_offset := Vector2.ZERO
@@ -49,6 +49,10 @@ func _drop() -> void:
 func add_ingredient(ingredient: Ingredient) -> bool:
 	if ingredient.layer == Ingredient.Layer.RAW:
 		return false
+	if ingredient.layer == Ingredient.Layer.DRIZZLE and !has_base():
+		print("add ice first")
+		return false
+		
 	contents.append(ingredient)
 	var r:= ColorRect.new()
 	r.color = ingredient.color
@@ -65,7 +69,7 @@ func has_base() -> bool:
 	return false;
 
 
-func clear() -> void:
+func reset() -> void:
 	contents.clear()
 	for content in $Layers.get_children():
 		content.queue_free()

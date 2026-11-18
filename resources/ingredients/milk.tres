@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://d5mhu5l8nl2i"]
+
+[ext_resource type="Script" uid="uid://da6eyi00ur684" path="res://scripts/Ingredient.gd" id="1_xqub4"]
+
+[resource]
+script = ExtResource("1_xqub4")
+id = &"milk"
+display_name = "milk"
+layer = 4
+color = Color(0.9999997, 0.9420406, 0.9754773, 1)
+price = 5.0
+metadata/_custom_type_script = "uid://da6eyi00ur684"

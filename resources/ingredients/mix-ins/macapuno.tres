@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://dnyxleuyqx7ua"]
+
+[ext_resource type="Script" uid="uid://da6eyi00ur684" path="res://scripts/Ingredient.gd" id="1_lng75"]
+
+[resource]
+script = ExtResource("1_lng75")
+id = &"macapuno"
+display_name = "macapuno"
+color = Color(0.9676786, 0.94725555, 0.98362654, 1)
+price = 5.0
+metadata/_custom_type_script = "uid://da6eyi00ur684"

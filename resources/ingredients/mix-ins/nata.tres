@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://dbqhqsohsm4tn"]
+
+[ext_resource type="Script" uid="uid://da6eyi00ur684" path="res://scripts/Ingredient.gd" id="1_hhi72"]
+
+[resource]
+script = ExtResource("1_hhi72")
+id = &"nata"
+display_name = "nata"
+color = Color(0.9861236, 0.89334637, 0.92471415, 1)
+price = 5.0
+metadata/_custom_type_script = "uid://da6eyi00ur684"

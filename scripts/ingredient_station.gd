@@ -6,7 +6,11 @@ extends Area2D
 
 func _ready() -> void:
 	$ColorRect.color = data.color
+	if data not in GameState.unlocked_ingredients:
+		hide()
+		return
 	input_event.connect(_on_input_event)
+
 
 func _on_input_event(_vp, event: InputEvent, _idx) -> void:
 	var mb := event as InputEventMouseButton

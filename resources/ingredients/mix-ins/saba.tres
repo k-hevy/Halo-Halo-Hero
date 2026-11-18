@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://c4yyga4ekofhi"]
+
+[ext_resource type="Script" uid="uid://da6eyi00ur684" path="res://scripts/Ingredient.gd" id="1_w01rb"]
+
+[resource]
+script = ExtResource("1_w01rb")
+id = &"saba"
+display_name = "saba"
+color = Color(0.95711166, 0.7194984, 0.3371201, 1)
+price = 5.0
+metadata/_custom_type_script = "uid://da6eyi00ur684"

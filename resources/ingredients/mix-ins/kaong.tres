@@ -1,0 +1,11 @@
+[gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://bwn8cxrtorutk"]
+
+[ext_resource type="Script" uid="uid://da6eyi00ur684" path="res://scripts/Ingredient.gd" id="1_0m40l"]
+
+[resource]
+script = ExtResource("1_0m40l")
+id = &"kaong"
+display_name = "kaong"
+color = Color(0.8742434, 0.8004824, 0.60260254, 1)
+price = 5.0
+metadata/_custom_type_script = "uid://da6eyi00ur684"

@@ -1,7 +1,7 @@
 class_name Ingredient
 extends Resource
 
-enum Layer { MIX_IN, BASE, TOPPING, RAW }
+enum Layer { MIX_IN, BASE, TOPPING, RAW, DRIZZLE }
 
 @export var id: StringName
 @export var display_name: String

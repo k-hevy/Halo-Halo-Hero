@@ -3,20 +3,32 @@
 [ext_resource type="PackedScene" uid="uid://cx2fjyvxx8p3b" path="res://scenes/bowl.tscn" id="1_3q41x"]
 [ext_resource type="Script" uid="uid://dowgc21bvseou" path="res://scripts/counter.gd" id="1_me8a0"]
 [ext_resource type="PackedScene" uid="uid://kiek8kls28gy" path="res://scenes/ingredient_station.tscn" id="2_me8a0"]
-[ext_resource type="Resource" uid="uid://b04m0tpftjdjv" path="res://resources/ingredients/gulaman.tres" id="3_vv7id"]
+[ext_resource type="Resource" uid="uid://b04m0tpftjdjv" path="res://resources/ingredients/mix-ins/gulaman.tres" id="3_vv7id"]
 [ext_resource type="PackedScene" uid="uid://duqrh8ffxbri3" path="res://scenes/ingredient_item.tscn" id="4_u6cvs"]
-[ext_resource type="Resource" uid="uid://dic5h3asf7vil" path="res://resources/ingredients/leche_flan.tres" id="5_uk4ww"]
-[ext_resource type="Resource" uid="uid://c7obowx2ilg43" path="res://resources/ingredients/ube.tres" id="6_sae31"]
+[ext_resource type="Resource" uid="uid://dic5h3asf7vil" path="res://resources/ingredients/toppings/leche_flan.tres" id="5_uk4ww"]
+[ext_resource type="Resource" uid="uid://c7obowx2ilg43" path="res://resources/ingredients/toppings/ube.tres" id="6_sae31"]
+[ext_resource type="Resource" uid="uid://c4yyga4ekofhi" path="res://resources/ingredients/mix-ins/saba.tres" id="7_6w3r3"]
+[ext_resource type="Resource" uid="uid://cd1sk3ei6a053" path="res://resources/ingredients/mix-ins/langka.tres" id="8_a0iql"]
+[ext_resource type="Resource" uid="uid://dnyxleuyqx7ua" path="res://resources/ingredients/mix-ins/macapuno.tres" id="9_m33pl"]
 [ext_resource type="Resource" uid="uid://bxtqcd8y7pe51" path="res://resources/ingredients/raw_ice.tres" id="9_u6cvs"]
+[ext_resource type="Resource" uid="uid://dbqhqsohsm4tn" path="res://resources/ingredients/mix-ins/nata.tres" id="10_bpha3"]
+[ext_resource type="Resource" uid="uid://d5mhu5l8nl2i" path="res://resources/ingredients/milk.tres" id="10_sae31"]
 [ext_resource type="PackedScene" uid="uid://ckyllys331b7s" path="res://scenes/blender.tscn" id="10_uk4ww"]
+[ext_resource type="Resource" uid="uid://bwn8cxrtorutk" path="res://resources/ingredients/mix-ins/kaong.tres" id="11_h0ynm"]
+[ext_resource type="PackedScene" uid="uid://db5p01fmsgv6b" path="res://scenes/menu.tscn" id="11_sae31"]
+[ext_resource type="Resource" uid="uid://j17mxntxju4b" path="res://resources/ingredients/mix-ins/munggo.tres" id="12_o3wcd"]
+[ext_resource type="Resource" uid="uid://bffxf56t305rn" path="res://resources/ingredients/mix-ins/garbanzos.tres" id="13_bhisd"]
+[ext_resource type="Resource" uid="uid://b015xq8ra3itq" path="res://resources/ingredients/toppings/cheese.tres" id="16_k80b3"]
 
 [node name="Counter" type="Node2D" unique_id=1491791934]
 script = ExtResource("1_me8a0")
 
+[node name="Menu" parent="." unique_id=1592695131 instance=ExtResource("11_sae31")]
+
 [node name="Background" type="ColorRect" parent="." unique_id=1725896855]
 offset_top = 202.0
-offset_right = 641.0
-offset_bottom = 362.0
+offset_right = 640.0
+offset_bottom = 360.0
 mouse_filter = 2
 color = Color(0.8204723, 0.56650007, 0.6881041, 1)
 
@@ -26,34 +38,85 @@ offset_top = 1.0
 offset_right = 41.0
 offset_bottom = 24.0
 
+[node name="TimeLabel" type="Label" parent="." unique_id=916268055]
+offset_left = 590.0
+offset_top = 11.0
+offset_right = 630.0
+offset_bottom = 34.0
+
 [node name="Bowl" parent="." unique_id=868326820 instance=ExtResource("1_3q41x")]
-position = Vector2(362, 261)
+position = Vector2(295, 255)
 
 [node name="Blender" parent="." unique_id=1358506422 instance=ExtResource("10_uk4ww")]
-position = Vector2(488, 254)
+position = Vector2(601, 258)
 
 [node name="Customers" type="Node2D" parent="." unique_id=412644299]
 
 [node name="Stations" type="Node2D" parent="." unique_id=1139729012]
 
 [node name="StationGulaman" parent="Stations" unique_id=584477767 instance=ExtResource("2_me8a0")]
-position = Vector2(154, 223)
+position = Vector2(182, 224)
 data = ExtResource("3_vv7id")
 item_scene = ExtResource("4_u6cvs")
 
+[node name="StationSaba" parent="Stations" unique_id=883342102 instance=ExtResource("2_me8a0")]
+position = Vector2(132, 223)
+data = ExtResource("7_6w3r3")
+item_scene = ExtResource("4_u6cvs")
+
+[node name="StationLangka" parent="Stations" unique_id=777505103 instance=ExtResource("2_me8a0")]
+position = Vector2(81, 222)
+data = ExtResource("8_a0iql")
+item_scene = ExtResource("4_u6cvs")
+
+[node name="StationMacapuno" parent="Stations" unique_id=1184933777 instance=ExtResource("2_me8a0")]
+position = Vector2(27, 223)
+data = ExtResource("9_m33pl")
+item_scene = ExtResource("4_u6cvs")
+
+[node name="StationNata" parent="Stations" unique_id=623667575 instance=ExtResource("2_me8a0")]
+position = Vector2(183, 280)
+data = ExtResource("10_bpha3")
+item_scene = ExtResource("4_u6cvs")
+
+[node name="StationKaong" parent="Stations" unique_id=1080665622 instance=ExtResource("2_me8a0")]
+position = Vector2(132, 281)
+data = ExtResource("11_h0ynm")
+item_scene = ExtResource("4_u6cvs")
+
+[node name="StationMunggo" parent="Stations" unique_id=121421223 instance=ExtResource("2_me8a0")]
+position = Vector2(79, 281)
+data = ExtResource("12_o3wcd")
+item_scene = ExtResource("4_u6cvs")
+
+[node name="StationGarbanzoz" parent="Stations" unique_id=61395797 instance=ExtResource("2_me8a0")]
+position = Vector2(28, 282)
+data = ExtResource("13_bhisd")
+item_scene = ExtResource("4_u6cvs")
+
 [node name="StationLeche" parent="Stations" unique_id=13605368 instance=ExtResource("2_me8a0")]
-position = Vector2(49, 223)
+position = Vector2(398, 264)
 data = ExtResource("5_uk4ww")
 item_scene = ExtResource("4_u6cvs")
 
 [node name="StationUbe" parent="Stations" unique_id=1137135869 instance=ExtResource("2_me8a0")]
-position = Vector2(98, 223)
+position = Vector2(452, 264)
 data = ExtResource("6_sae31")
 item_scene = ExtResource("4_u6cvs")
 
+[node name="StationCheese" parent="Stations" unique_id=617334347 instance=ExtResource("2_me8a0")]
+position = Vector2(501, 264)
+data = ExtResource("16_k80b3")
+item_scene = ExtResource("4_u6cvs")
+
 [node name="StationIce" parent="Stations" unique_id=1200927164 instance=ExtResource("2_me8a0")]
-position = Vector2(568, 284)
+position = Vector2(584, 304)
 data = ExtResource("9_u6cvs")
+item_scene = ExtResource("4_u6cvs")
+
+[node name="StationMilk" parent="Stations" unique_id=1854481469 instance=ExtResource("2_me8a0")]
+position = Vector2(295, 306)
+data = ExtResource("10_sae31")
 item_scene = ExtResource("4_u6cvs")
 
 [node name="CustomerSpot" type="Marker2D" parent="." unique_id=149410791]
@@ -62,4 +125,6 @@ position = Vector2(328, 156)
 [node name="NextCustomerTimer" type="Timer" parent="." unique_id=394552823]
 one_shot = true
 
-[connection signal="timeout" from="NextCustomerTimer" to="." method="_on_next_customer_timer_timeout"]
+[node name="DayTimer" type="Timer" parent="." unique_id=262443112]
+wait_time = 5.0
+one_shot = true

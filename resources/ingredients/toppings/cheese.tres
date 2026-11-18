@@ -1,0 +1,12 @@
+[gd_resource type="Resource" script_class="Ingredient" format=3 uid="uid://b015xq8ra3itq"]
+
+[ext_resource type="Script" uid="uid://da6eyi00ur684" path="res://scripts/Ingredient.gd" id="1_w3bmt"]
+
+[resource]
+script = ExtResource("1_w3bmt")
+id = &"cheese"
+display_name = "cheese"
+layer = 2
+color = Color(0.8919125, 0.6586729, 0.18391636, 1)
+price = 5.0
+metadata/_custom_type_script = "uid://da6eyi00ur684"

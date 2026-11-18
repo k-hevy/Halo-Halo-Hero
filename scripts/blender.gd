@@ -23,7 +23,6 @@ func _on_input_event(_viewport: Node, event: InputEvent, _shape_idx: int) -> voi
 				print("BLENDING NOT DONE")
 			State.DONE: 
 				spawn_ice()
-				
 
 
 func _on_blend_timer_timeout() -> void:
@@ -36,7 +35,7 @@ func add_ice(ingredient: Ingredient) -> bool:
 		print("thhats not ice")
 		return false
 		
-	if state == State.FILLED:
+	if state != State.EMPTY:
 		print("thhis alreadty has ice")
 		return false
 		
@@ -56,3 +55,7 @@ func spawn_ice() -> void:
 
 func take_back() -> void:
 	state = State.DONE
+
+
+func reset() -> void:
+	state = State.EMPTY
