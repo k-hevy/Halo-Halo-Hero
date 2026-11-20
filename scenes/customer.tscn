@@ -7,7 +7,7 @@ size = Vector2(40, 40)
 
 [node name="Customer" type="Area2D" unique_id=1902535501]
 script = ExtResource("1_ktfjk")
-waitTime = 15
+waitTime = 5
 
 [node name="ColorRect" type="ColorRect" parent="." unique_id=1865181110]
 offset_right = 40.0
@@ -24,7 +24,7 @@ position = Vector2(20, 20)
 shape = SubResource("RectangleShape2D_g4v7s")
 
 [node name="WaitTimer" type="Timer" parent="." unique_id=1662809568]
-wait_time = 15.0
+wait_time = 5.0
 one_shot = true
 
 [node name="ProgressBar" type="ProgressBar" parent="." unique_id=1647845474]

@@ -3,6 +3,7 @@ extends Area2D
 
 
 @onready var order: Order
+@onready var slot_index : int
 @onready var fill_style := StyleBoxFlat.new()
 @onready var waitTimer : Timer = $WaitTimer
 @onready var progressBar : ProgressBar = $ProgressBar
@@ -32,7 +33,7 @@ func setup(o: Order) -> void:
 
 
 func _on_wait_timer_timeout() -> void:
-	EventBus.left_unserved.emit()
+	EventBus.left_unserved.emit(self)
 
 
 func remove() -> void:
