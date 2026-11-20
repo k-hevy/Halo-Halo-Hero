@@ -6,6 +6,7 @@ var dragging := true
 var source : Blender
 
 func _ready() -> void:
+	$Label.text = data.display_name
 	$ColorRect.color = data.color
 
 

@@ -1,9 +1,9 @@
 extends CanvasLayer
 
-@onready var day_label: Label = $Control/Panel/VBoxContainer/DayNumber
-@onready var money_earned_label: Label = $Control/Panel/VBoxContainer/EarnedToday
-@onready var current_money_label: Label = $Control/Panel/VBoxContainer/TotalMoney
-@onready var next_day_button: Button = $Control/Panel/VBoxContainer/NextDay
+@onready var day_label: Label = $Control/SummaryPanel/VBoxContainer/DayNumber
+@onready var money_earned_label: Label = $Control/SummaryPanel/VBoxContainer/EarnedToday
+@onready var current_money_label: Label = $Control/SummaryPanel/VBoxContainer/TotalMoney
+@onready var next_day_button: Button = $Control/SummaryPanel/VBoxContainer/NextDay
 
 func _ready() -> void:
 	hide()
@@ -16,7 +16,11 @@ func on_day_ended() -> void:
 	money_earned_label.text = "Money Earned: "+ str(GameState.get_earned_today())
 	current_money_label.text =  "Current Money: " + str(GameState.currentMoney) 
 	show()
-	
+
+
 func on_next_day() -> void:
+	if GameState.is_last_day():
+		GameState.finish_run(true)
+		return
 	hide()
 	EventBus.day_started.emit()

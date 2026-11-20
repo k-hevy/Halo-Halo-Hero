@@ -16,7 +16,7 @@
 [ext_resource type="Resource" uid="uid://d5mhu5l8nl2i" path="res://resources/ingredients/milk.tres" id="10_sae31"]
 [ext_resource type="PackedScene" uid="uid://ckyllys331b7s" path="res://scenes/blender.tscn" id="10_uk4ww"]
 [ext_resource type="Resource" uid="uid://bwn8cxrtorutk" path="res://resources/ingredients/mix-ins/kaong.tres" id="11_h0ynm"]
-[ext_resource type="PackedScene" uid="uid://db5p01fmsgv6b" path="res://scenes/menu.tscn" id="11_sae31"]
+[ext_resource type="PackedScene" uid="uid://db5p01fmsgv6b" path="res://scenes/ui/menu.tscn" id="11_sae31"]
 [ext_resource type="Resource" uid="uid://j17mxntxju4b" path="res://resources/ingredients/mix-ins/munggo.tres" id="12_o3wcd"]
 [ext_resource type="Resource" uid="uid://bffxf56t305rn" path="res://resources/ingredients/mix-ins/garbanzos.tres" id="13_bhisd"]
 [ext_resource type="Resource" uid="uid://b015xq8ra3itq" path="res://resources/ingredients/toppings/cheese.tres" id="16_k80b3"]

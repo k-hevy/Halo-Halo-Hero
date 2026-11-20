@@ -14,7 +14,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="Panel" type="Panel" parent="Control" unique_id=1837662609]
+[node name="SummaryPanel" type="Panel" parent="Control" unique_id=1837662609]
 layout_mode = 1
 anchors_preset = 15
 anchor_right = 1.0
@@ -22,7 +22,7 @@ anchor_bottom = 1.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel" unique_id=2110086863]
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/SummaryPanel" unique_id=2110086863]
 layout_mode = 1
 anchors_preset = 8
 anchor_left = 0.5
@@ -36,21 +36,21 @@ offset_bottom = 20.0
 grow_horizontal = 2
 grow_vertical = 2
 
-[node name="DayNumber" type="Label" parent="Control/Panel/VBoxContainer" unique_id=599195266]
+[node name="DayNumber" type="Label" parent="Control/SummaryPanel/VBoxContainer" unique_id=599195266]
 layout_mode = 2
 text = "Day"
 horizontal_alignment = 1
 
-[node name="EarnedToday" type="Label" parent="Control/Panel/VBoxContainer" unique_id=405921873]
+[node name="EarnedToday" type="Label" parent="Control/SummaryPanel/VBoxContainer" unique_id=405921873]
 layout_mode = 2
 text = "Earned Today"
 horizontal_alignment = 1
 vertical_alignment = 1
 
-[node name="TotalMoney" type="Label" parent="Control/Panel/VBoxContainer" unique_id=516520313]
+[node name="TotalMoney" type="Label" parent="Control/SummaryPanel/VBoxContainer" unique_id=516520313]
 layout_mode = 2
 text = "Money Earned: "
 
-[node name="NextDay" type="Button" parent="Control/Panel/VBoxContainer" unique_id=1573876482]
+[node name="NextDay" type="Button" parent="Control/SummaryPanel/VBoxContainer" unique_id=1573876482]
 layout_mode = 2
 text = "NEXT DAY"

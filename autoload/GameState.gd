@@ -5,11 +5,14 @@ var money_at_start_day: float = currentMoney
 var current_day: int = 1
 var unlocked_ingredients: Array[Ingredient] = []
 var is_day_active := true
-var max_health : int = 1
-var health : int = 1
+var max_health : int = 100
+var health : int = 100
+var run_won := false
 
-const time_per_Day = [3, 3, 3, 3, 3] 
-const mix_in_per_day = [2, 2, 3, 3, 3]
+const time_per_Day = [60, 75, 90, 90, 105]
+const wait_time_per_day = [40, 35, 30, 28, 25]
+const spawn_delay_per_day = [3, 4, 5, 5, 6]
+
 const order_damage : int = 10
 const DAY_UNLOCKS := {
 	1: {
@@ -22,7 +25,7 @@ const DAY_UNLOCKS := {
 			preload("res://resources/ingredients/mix-ins/langka.tres"),
 			preload("res://resources/ingredients/toppings/leche_flan.tres"),
 		],
-		"customer_slots": 3,
+		"customer_slots": 1,
 		"intro_dialogue" : [
 			"Day 1: Welcome to your new Halo-Halo stand!",
 			"Layer ice, milk, mix-ins, and toppings to match each order.",
@@ -80,12 +83,12 @@ const DAY_UNLOCKS := {
 
 
 func _ready() -> void:
-	begin_next_Day()
+	#begin_next_Day()
+	unlock_for_day(current_day)
 	EventBus.order_paid.connect(add_money)
 	EventBus.day_ended.connect(end_day)
 	EventBus.day_started.connect(begin_next_Day)
 	EventBus.left_unserved.connect(lose_health)
-
 
 
 func add_money(amount: float) -> void:
@@ -94,29 +97,36 @@ func add_money(amount: float) -> void:
 
 
 func lose_health(_customer : Customer) -> void:
-	health -=  order_damage
-	if health <= 0:
-		EventBus.game_over.emit()
+	if not is_day_active:
+		return
+	health = max(health - order_damage, 0)
 	EventBus.health_changed.emit(health, max_health)
-	print(health)
+	if health == 0:
+		EventBus.game_over.emit()
 
 
 func end_day() -> void:
-	current_day += 1
 	is_day_active = false
 	get_tree().paused = true
-	print("Day Ended")
-	# 1. Freeze player movement / inputs
-	# 2. Open the "Results / Summary" UI screen
-	# 3. Save game data to disk
 
 
 func begin_next_Day() -> void:
-	get_tree().paused = false
-	is_day_active = true
+	current_day += 1
 	unlock_for_day(current_day)
 	money_at_start_day = currentMoney
+	is_day_active = true
+	get_tree().paused = false
 	get_tree().reload_current_scene()
+
+
+func reset() -> void:
+	currentMoney = 100
+	money_at_start_day = currentMoney
+	current_day = 1
+	health = max_health
+	is_day_active = true
+	unlocked_ingredients.clear()
+	unlock_for_day(1)
 
 
 func get_earned_today() -> float:
@@ -125,7 +135,7 @@ func get_earned_today() -> float:
 
 func unlock_for_day(day : int) -> void:
 	
-	if day > 5 or day < 1:
+	if not DAY_UNLOCKS.has(day):
 		print("Game Ended")
 		return
 
@@ -139,3 +149,13 @@ func unlock_for_day(day : int) -> void:
 
 func is_unlocked(ingredient : Ingredient) -> bool:
 	return ingredient in unlocked_ingredients
+
+
+func is_last_day() -> bool:
+	return current_day > DAY_UNLOCKS.size()
+
+
+func finish_run(won: bool) -> void:
+	run_won = won
+	get_tree().paused = false
+	get_tree().change_scene_to_file("res://scenes/end_scene.tscn")

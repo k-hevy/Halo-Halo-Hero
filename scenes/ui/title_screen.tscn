@@ -1,0 +1,49 @@
+[gd_scene format=3 uid="uid://44os7njknulj"]
+
+[ext_resource type="Script" uid="uid://bq3rtt8d8jsno" path="res://scripts/title_screen.gd" id="1_eb34j"]
+
+[node name="TitleScreen" type="CanvasLayer" unique_id=428805725]
+script = ExtResource("1_eb34j")
+
+[node name="Control" type="Control" parent="." unique_id=1815568057]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Panel" type="Panel" parent="Control" unique_id=361014739]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="VBoxContainer" type="VBoxContainer" parent="Control/Panel" unique_id=1781891005]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -40.0
+offset_top = -23.5
+offset_right = 40.0
+offset_bottom = 23.5
+grow_horizontal = 2
+grow_vertical = 2
+
+[node name="Label" type="Label" parent="Control/Panel/VBoxContainer" unique_id=561305751]
+layout_mode = 2
+text = "WELCOME"
+
+[node name="Start" type="Button" parent="Control/Panel/VBoxContainer" unique_id=475915892]
+layout_mode = 2
+text = "START"
+
+[node name="Quit" type="Button" parent="Control/Panel/VBoxContainer" unique_id=1112068346]
+layout_mode = 2
+text = "QUIT
+"

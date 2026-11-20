@@ -93,8 +93,10 @@ func find_free_slot() -> int:
 
 
 func try_start_spawn_timer() -> void:
+	if not GameState.is_day_active:
+		return
 	if find_free_slot() != -1 and next_customer_timer.is_stopped():
-		next_customer_timer.start(2)
+		next_customer_timer.start(GameState.spawn_delay_per_day[GameState.current_day -1])
 
 
 func on_left_un_served(customer : Customer) -> void:
@@ -140,4 +142,9 @@ func on_health_changed(current_health : int, max_health : int) -> void:
 
 
 func on_game_over() -> void:
-	print("GAME OBER")
+	GameState.is_day_active = false
+	day_timer.stop()
+	next_customer_timer.stop()
+	for c in customers:
+		free_slot(c)
+	GameState.finish_run(false)

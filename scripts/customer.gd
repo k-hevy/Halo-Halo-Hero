@@ -7,17 +7,17 @@ extends Area2D
 @onready var fill_style := StyleBoxFlat.new()
 @onready var waitTimer : Timer = $WaitTimer
 @onready var progressBar : ProgressBar = $ProgressBar
-@export var waitTime : int
 
 
 func _ready() -> void:
+	waitTimer.start(GameState.wait_time_per_day[GameState.current_day - 1])
 	progressBar.add_theme_stylebox_override("fill",fill_style)
 	waitTimer.start()
 
 
 func _process(_delta: float) -> void:
-	progressBar.value = waitTimer.time_left / waitTime
-	var ratio = waitTimer.time_left / waitTime
+	var ratio := waitTimer.time_left / waitTimer.wait_time
+	progressBar.value = ratio
 	if ratio > 0.5:
 		fill_style.bg_color = Color.GREEN
 	elif ratio > 0.25:
